@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+--Moderate-violet: hsl(263, 55%, 52%);
+--Very-dark-grayish-blue: hsl(217, 19%, 35%);
+--Very-dark-blackish-blue: hsl(219, 29%, 14%);
+--White: hsl(0, 0%, 100%);
+--Light-gray: hsl(0, 0%, 81%);
+--Light-grayish-blue: hsl(210, 46%, 95%);
+--shadow: 219 29% 14%;
+--border: 210 46% 95%;
+}
+
+*{
+    font-family: "Barlow Semi Condensed";
+}
+
+body{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.name,.pos,.sub,.main{
+    color: var(--Light-grayish-blue);
+    line-height: 1.5;
+}
+
+.main{
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    line-height: 1.2;
+    
+}
+.name{
+    line-height: 1.1;
+}
+
+.name,.sub{
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.pos{
+    font-size: 0.725rem;
+    font-weight: 500;
+    opacity: 50%;
+}
+
+.sub{
+    opacity: 70%;
+    margin-top: 1.2rem;
+    font-weight: 400;
+    
+}
+
+body{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--Light-grayish-blue);
+}
+
+.card{
+    display: grid;
+    width: min(95%,70rem);
+    grid-auto-columns: 1fr;
+    gap: 1.5rem;
+    grid-template-areas: 
+    "one"
+    "two"
+    "three"
+    "four"
+    "five";
+    
+}
+
+.child1,.child2,.child3,.child4,.child5{
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--shadow)/0.25);
+}
+
+.child1{
+    background-color: var(--Moderate-violet);
+    background-image: url("./images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: top right 10%;
+    grid-area: one;
+}
+
+.child2{
+    background-color: var(--Very-dark-grayish-blue);
+    grid-area: two;
+}
+
+.child3{
+    
+    background-color: var(--White);
+    grid-area: three;
+}
+
+.child3 .name, .child5 .name{
+    color: var(--Very-dark-grayish-blue);
+}
+
+.child3 .main, .child5 .main{
+    color: var(--Very-dark-blackish-blue);
+}
+
+.child3 .pos, .child5 .pos{
+    color: var(--Very-dark-grayish-blue);
+    opacity: 50%;
+}
+
+.child3 .sub, .child5 .sub{
+    color: var(--Very-dark-grayish-blue);
+    opacity: 70%;
+}
+
+.child4{
+    
+    background-color: var(--Very-dark-blackish-blue);
+    grid-area: four;
+}
+
+.child5{
+    
+    background-color: var(--White);
+    grid-area: five;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+}
+
+img{
+    border-radius: 50%;
+    height: 1.75rem;
+    margin-right: 1rem;
+}
+
+.child1 img{
+    border: 2.85px solid hsl(var(--border)/0.25); 
+}
+
+.child4 img{
+    border: 2.85px solid var(--Moderate-violet); 
+}
+
+@media screen and (min-width: 33em) {
+    .card {
+        grid-template-areas:
+        "one one"
+        "two three"
+        "five five"
+        "four four";
+    }
+  }
+  
+  @media screen and (min-width: 38em) {
+    .card {
+      grid-template-areas:
+       'one one'
+       'two five'
+       'three five'
+       'four four';
+    }
+  }
+  
+  @media screen and (min-width: 54em) {
+    .card {
+        grid-template-areas:
+        "one one two"
+        "five five five"
+        "three four four";
+    }
+  }
+  @media screen and (min-width: 75em) {
+    body{
+        margin: 0;
+    }
+    .card {
+        grid-template-areas:
+        "one one two five"
+        "three four four five"
+    }
+  }
